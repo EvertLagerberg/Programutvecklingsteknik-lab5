@@ -31,49 +31,30 @@ public class Tree extends TreeFrame{
 	}
     
     public static void main(String[] args) {
-    	
+    	list = new ArrayList<String>();
 	    BufferedReader br = null;
 		try {
 			br = new BufferedReader(new FileReader("TinyLife.txt"));
 		     String line = br.readLine();
-		     
+		    
 		     while (line != null) {
 		            list.add(line);
 		            //System.out.println(line);
 		            line = br.readLine();
 		        }
-
+		     br.close();
 		} catch (FileNotFoundException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
 		catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	    try {
-	        list = new ArrayList<String>();
-	        String line = br.readLine();
-
-	        while (line != null) {
-	            list.add(line);
-	            //System.out.println(line);
-	            line = br.readLine();
-	        }
-	     
-	    } catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} finally {
-	        try {
-				br.close();
-			} catch (IOException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-	    }
-    	
+		for (String str:list){
+	    	 System.out.println(str);
+	     }
+	    
     	new Tree();
         }
 }
