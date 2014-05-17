@@ -21,6 +21,7 @@ public class Tree extends TreeFrame{
 	DefaultMutableTreeNode gren;
 	static int position=0;
 	static int i=0;
+	static String infil = null;
 	
     void initTree(){
     	root = new DefaultMutableTreeNode(noder.get(0).name);
@@ -67,13 +68,25 @@ public class Tree extends TreeFrame{
  
     
     public static void main(String[] args) {
+    	if (args.length == 0){
+    		infil = "Liv.xml";
+    	}
+    	else{
+    		infil = args[0];
+    	}
     	list = new ArrayList<String>();
     	noder = new ArrayList<MyNode>();
     	BufferedReader br = null;
 		try {
-			br = new BufferedReader(new InputStreamReader(new FileInputStream("Liv.txt"), "ISO-8859-1"));
-		     String line = br.readLine();
-		    
+			;
+			br = new BufferedReader(new InputStreamReader(new FileInputStream(infil), "ISO-8859-1"));
+			
+			// Vid XML-fil, läs bort XML taggen
+			if(infil.split("\\.")[1].equals("xml")){
+				
+				br.readLine();
+			}
+			String line = br.readLine();
 		     while (line != null) {
 		            list.add(line);
 		            //System.out.println(line);
@@ -91,8 +104,7 @@ public class Tree extends TreeFrame{
 		}
 		for (String str:list){
 			noder.add(new MyNode(str));
-		}
-				
+		}			
     	new Tree();
         }
 }
