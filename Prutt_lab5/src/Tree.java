@@ -46,6 +46,7 @@ public class Tree extends TreeFrame {
 				position++;
 				endLevel = noder.get(position).level;
 				if (!noder.get(position).level.startsWith("/")) {
+
 					addChild(noder.get(position), child);
 				}
 			}
@@ -56,7 +57,6 @@ public class Tree extends TreeFrame {
 		return (!("/" + nod.level).equals(noder.get(position + 1).level) && !nod.level
 				.startsWith("/"));
 	}
-
 
     void showDetails(TreePath path){
     String info ="";
@@ -90,6 +90,7 @@ public class Tree extends TreeFrame {
 
 
 
+
 	public static void main(String[] args) throws IOException {
 		if (args.length == 0) {
 			infil = "Liv.xml";
@@ -104,6 +105,7 @@ public class Tree extends TreeFrame {
 
 		// Vid XML-fil, l�s bort XML taggen
 		if (infil.split("\\.")[1].equals("xml")) {
+
 			br.readLine();
 		}
 		String line = br.readLine();
@@ -120,3 +122,4 @@ public class Tree extends TreeFrame {
 		new Tree();
 	}
 }
+
