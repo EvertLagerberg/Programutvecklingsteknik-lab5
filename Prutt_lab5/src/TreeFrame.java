@@ -72,7 +72,7 @@ class TreeFrame extends JFrame implements ActionListener {
 	JOptionPane.showMessageDialog(this, info);
     }
 
-    public static void main(String[] u) {
+    public static void main(String[] u) throws IOException {
 	new TreeFrame();
     }
 }

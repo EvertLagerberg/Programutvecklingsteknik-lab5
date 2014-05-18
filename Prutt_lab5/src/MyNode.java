@@ -1,20 +1,25 @@
+import javax.swing.tree.DefaultMutableTreeNode;
 
-public class MyNode {
+
+public class MyNode extends DefaultMutableTreeNode{
 	
 	public String level;
 	public String name;
+	public String info;
+
 
 	
 	MyNode(String str){
-	  level = getLevel(str);
-	  name = getName(str);
+	  level = SetLevel(str);
+	  name = SetName(str);
+	  info = SetInfo(str);
 		
 	}
-	private String getLevel(String str){
+	public String SetLevel(String str){
 		String s = str.split(" ")[0].replace("<", "").replace(">", "");
 		return s;
 	}
-	private String getName(String str){
+	public String SetName(String str){
 		String[] s = str.split("\"");
 		if (s.length>1){
 			String name = s[1];
@@ -23,6 +28,20 @@ public class MyNode {
 		else{
 			return null;
 		}
+	}
+	
+	public String SetInfo(String str){
+		String[] s = str.split(">");
+		if (s.length>1){
+		return s[1];
+		}
+		
+		
+		return null;
+	}
+	
+	public String toString(){
+		return name;
 	}
 
 }

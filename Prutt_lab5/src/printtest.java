@@ -11,7 +11,7 @@ public class printtest {
 	public static void main(String[] args) throws IOException {
 		
 		
-	    BufferedReader br = new BufferedReader(new FileReader("TinyLife.txt"));
+	    BufferedReader br = new BufferedReader(new FileReader("Liv.xml"));
 	    try {
 	        list = new ArrayList<String>();
 	        String line = br.readLine();
